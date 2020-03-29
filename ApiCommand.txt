@@ -1,0 +1,33 @@
+----- Exemples RESTAPI  via Insomnia-------
+
+GET localhost:9292/movies/populate/nm0000243
+
+GET localhost:9292/movies
+
+GET localhost:9292/movies/tt10016180 (id)
+
+GET localhost:9292/movies/search?limit=3&metascore=75 (var limit and metascore)
+
+----- Exemples GraphQL via http://localhost:9292/graphql 
+
+{populate(id:"nm0000243")}
+
+{randomMovie{
+  link,id,title,metascore,poster,rating,synopsis,title,vote,year
+}}
+
+{moviesId(id:"tt0477080"){
+  link,id,title,metascore,poster,rating,synopsis,title,vote,year
+}}
+
+{denzelMovies(limit:5,metascore:50){
+  link,id,title,metascore,poster,rating,synopsis,title,vote,year
+}}
+
+{
+  saveReview(date: "24-03-2020", review: "Parfait !", id: "tt0477080")
+}
+
+
+
+
